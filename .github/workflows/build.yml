@@ -25,4 +25,13 @@ jobs:
       - name: Upload bundle stats artifact
         uses: relative-ci/agent-upload-artifact-action@v2
         with:
-          webpackStatsFile: ./dist/webpack-stats.json
+          webpackStatsFile:
+            ./dist/webpack-stats.json
+
+            # Send bundle stats and build information to RelativeCI
+      - name: Send bundle stats to RelativeCI
+        uses: relative-ci/agent-action@v2
+        with:
+          webpackStatsFile: ./webpack-stats.json
+          key: ${{ secrets.RELATIVE_CI_KEY }}
+          token: ${{ secrets.GITHUB_TOKEN }}

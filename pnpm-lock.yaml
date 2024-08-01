@@ -14,6 +14,9 @@ importers:
       '@vueuse/core':
         specifier: ^10.11.0
         version: 10.11.0(vue@3.4.35(typescript@5.5.4))
+      '@xstate/vue':
+        specifier: ^3.1.2
+        version: 3.1.2(vue@3.4.35(typescript@5.5.4))(xstate@5.17.1)
       animejs:
         specifier: ^3.2.2
         version: 3.2.2
@@ -29,6 +32,9 @@ importers:
       vue:
         specifier: ^3.4.31
         version: 3.4.35(typescript@5.5.4)
+      xstate:
+        specifier: ^5.17.1
+        version: 5.17.1
     devDependencies:
       '@types/node':
         specifier: ^22.0.0
@@ -404,6 +410,15 @@ packages:
 
   '@vueuse/shared@10.11.0':
     resolution: {integrity: sha512-fyNoIXEq3PfX1L3NkNhtVQUSRtqYwJtJg+Bp9rIzculIZWHTkKSysujrOk2J+NrRulLTQH9+3gGSfYLWSEWU1A==}
+
+  '@xstate/vue@3.1.2':
+    resolution: {integrity: sha512-gMr4LPl3jGvnfMTke0AIx74FvErGjtqfUNdExQUda/aL9e7yc5fGSDBFJlVQfR44hd2xmQDZVjqbxadEk8NRXQ==}
+    peerDependencies:
+      vue: ^3.0.0
+      xstate: ^5.11.0
+    peerDependenciesMeta:
+      xstate:
+        optional: true
 
   animejs@3.2.2:
     resolution: {integrity: sha512-Ao95qWLpDPXXM+WrmwcKbl6uNlC5tjnowlaRYtuVDHHoygjtIPfDUoK9NthrlZsQSKjZXlmji2TrBUAVbiH0LQ==}
@@ -937,6 +952,9 @@ packages:
     resolution: {integrity: sha512-si7QWI6zUMq56bESFvagtmzMdGOtoxfR+Sez11Mobfc7tm+VkUckk9bW2UeffTGVUbOksxmSw0AA2gs8g71NCQ==}
     engines: {node: '>=12'}
 
+  xstate@5.17.1:
+    resolution: {integrity: sha512-RNwcXdth+kboWZg+Zhf6f6iNP6CtAAiS4z4qwyTd/fWBH9PHXRqko6OdW3xOTwP62f0mVD+jsPOSqY4Ar8nZKQ==}
+
   yaml@2.5.0:
     resolution: {integrity: sha512-2wWLbGbYDiSqqIKoPjar3MPgB94ErzCtrNE1FdqGuaO0pi2JGjmE8aW8TDZwzU7vuxcGRdL/4gPQwQ7hD5AMSw==}
     engines: {node: '>= 14'}
@@ -1235,6 +1253,12 @@ snapshots:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
+
+  '@xstate/vue@3.1.2(vue@3.4.35(typescript@5.5.4))(xstate@5.17.1)':
+    dependencies:
+      vue: 3.4.35(typescript@5.5.4)
+    optionalDependencies:
+      xstate: 5.17.1
 
   animejs@3.2.2: {}
 
@@ -1744,5 +1768,7 @@ snapshots:
       ansi-styles: 6.2.1
       string-width: 5.1.2
       strip-ansi: 7.1.0
+
+  xstate@5.17.1: {}
 
   yaml@2.5.0: {}

@@ -18,6 +18,8 @@ jobs:
 
       # - run: pnpm ci
 
+      - run: pnpm install
+
       - run: pnpm build
 
       - name: Upload bundle stats artifact

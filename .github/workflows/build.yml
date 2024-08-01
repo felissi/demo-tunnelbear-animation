@@ -1,0 +1,26 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "latest"
+
+      - run: npm install -g pnpm
+
+      # - run: pnpm ci
+
+      - run: pnpm build
+
+      - name: Upload bundle stats artifact
+        uses: relative-ci/agent-upload-artifact-action@v2
+        with:
+          webpackStatsFile: ./dist/webpack-stats.json

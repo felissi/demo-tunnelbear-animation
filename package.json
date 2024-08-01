@@ -20,6 +20,7 @@
   "devDependencies": {
     "@types/node": "^22.0.0",
     "@vitejs/plugin-vue": "^5.0.5",
+    "rollup-plugin-webpack-stats": "^1.0.1",
     "typescript": "^5.2.2",
     "vite": "^5.3.4",
     "vue-tsc": "^2.0.24"

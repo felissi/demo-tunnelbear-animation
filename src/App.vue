@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Page from "./components/Page.vue";
+import Page from "./components/bear/Page.vue";
 // Credit https://www.tunnelbear.com/account/login
 </script>
 

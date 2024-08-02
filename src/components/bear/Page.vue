@@ -1,10 +1,7 @@
 <template>
   <div class="">
     <div class="flex items-center justify-center mb-8">
-      <Bear
-        :mode="snapshot.value"
-        :frameNumber="snapshot.context.frameNumber.value"
-      />
+      <Bear :mode="mode" :frameNumber="frameNumber" />
     </div>
 
     <h1 class="m-auto mb-4 text-3xl font-semibold text-center">
@@ -45,9 +42,9 @@ import { createMachine, fromPromise } from "xstate";
 import { useMachine } from "@xstate/vue";
 
 import Bear from "./Bear.vue";
-import { bearMachine } from "./bearMachine";
+import { useBear } from "./bearMachine";
 
-const { snapshot, send } = useMachine(bearMachine);
+const { mode, frameNumber, send } = useBear();
 
 function onPasswordFocus() {
   send({ type: "hide" });

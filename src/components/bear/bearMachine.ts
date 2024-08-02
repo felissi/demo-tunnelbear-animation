@@ -1,5 +1,6 @@
+import { useMachine } from "@xstate/vue";
 import anime from "animejs";
-import { ref } from "vue";
+import { ref, computed, type ComputedRef } from "vue";
 import { createMachine } from "xstate";
 
 export const bearMachine = createMachine({
@@ -93,3 +94,12 @@ export const bearMachine = createMachine({
     },
   },
 });
+
+export function useBear() {
+  const { snapshot, send } = useMachine(bearMachine);
+  return {
+    mode: computed(() => snapshot.value.value) as ComputedRef<"hide" | "watch">,
+    frameNumber: snapshot.value.context.frameNumber,
+    send,
+  };
+}
